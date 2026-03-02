@@ -8,41 +8,42 @@ import AvailableForWork from "../components/available.astro";
 ---
 
 <RootLayout>
-	<main>
-		<div class="group relative w-full min-h-dvh flex items-center justify-center">
-			<div class="absolute w-full h-dvh -z-10">
-				<WarpBackground
-					color1="#000000"
-					color2="#000272"
-					color3="#19dcff"
-					speed={0.6}
-					swirl={0.5}
-					swirlIterations={10}
-					shapeScale={0.3}
-					client:load
-				/>
+	<main class="h-[100dvh] overflow-hidden">
+		<div class="group relative w-full h-[100dvh] flex items-center justify-center">
+			<div class="absolute inset-0 -z-10 h-[100dvh]">
+			<WarpBackground
+				color1="#000000"
+				color2="#000272"
+				color3="#19dcff"
+				speed={0.6}
+				swirl={0.5}
+				swirlIterations={10}
+				shapeScale={0.3}
+				client:load
+			/>
 			</div>
 
-			<div class="p-4 sm:p-8 absolute w-full h-dvh flex flex-col justify-between z-10">
-				<div>
-					<H1 size="large"> Pablo <br /> Otero </H1>
+			<div class="p-4 sm:p-8 absolute inset-0 flex flex-col justify-between z-10">
+			<!-- Contenido igual -->
+			<div>
+				<H1 size="large"> Pablo <br /> Otero </H1>
+			</div>
+
+			<div>
+				<AvailableForWork className="py-4" />
+				<div class="mb-2 sm:mb-4 flex items-center justify-between">
+				<div class="flex items-center gap-4">
+					<Link href="#">Agendar llamada</Link>
+					<Link href="/projects" variant="secondary">Trabajos recientes</Link>
 				</div>
 
-				<div>
-					<available className="py-4" />
-					<div class="mb-2 sm:mb-4 flex items-center justify-between">
-						<div class="flex items-center gap-4">
-							<Link href="#">Agendar llamada</Link>
-							<Link href="/projects" variant="secondary">Trabajos recientes</Link>
-						</div>
-
-						<Navigation client:load>
-							<Link href="/blog" variant="secondary">Blog</Link>
-							<Link href="/about" variant="secondary">Sobre mi</Link>
-							<Link href="/contact" variant="secondary">Contacto</Link>
-						</Navigation>
-					</div>
+				<Navigation client:load>
+					<Link href="/blog" variant="secondary">Blog</Link>
+					<Link href="/about" variant="secondary">Sobre mi</Link>
+					<Link href="/contact" variant="secondary">Contacto</Link>
+				</Navigation>
 				</div>
+			</div>
 			</div>
 		</div>
 	</main>
