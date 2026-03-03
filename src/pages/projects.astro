@@ -51,13 +51,12 @@ const projects = [
                          alt={project.title} 
                          width={project.image.width}
                          height={project.image.height}
-                         class="w-full aspect-[3/2] object-cover rounded-xl shadow-xl"  <!-- ← aspect más ancho -->
-                    />
+                         class="w-full aspect-[3/2] object-cover rounded-xl shadow-xl"/>
                     </div>
-                    <div class="flex-1 flex flex-col justify-end space-y-2">
-                    <h2 class="text-xl font-bold text-white">{project.title}</h2>
-                    <p class="text-base text-zinc-300 leading-relaxed">{project.description}</p>
-                    </div>
+                         <div class="flex-1 flex flex-col justify-end space-y-2">
+                         <h2 class="text-xl font-bold text-white">{project.title}</h2>
+                         <p class="text-base text-zinc-300 leading-relaxed">{project.description}</p>
+                         </div>
                     </div>
                </a>
                </li>
