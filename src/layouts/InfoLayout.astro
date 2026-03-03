@@ -9,27 +9,26 @@ const pathname = Astro.url.pathname;
 ---
 
 <RootLayout title={title} description={description}>
-	<div class="flex relative gap-4 w-full max-w-screen-xl">
-		<nav class="relative w-4 md:min-w-2xs xl:min-w-sm sm:min-h-screen sm:ml-4 sm:pb-4">
-			<div class="w-full h-full max-sm:w-4 md:max-w-2xs xl:max-w-sm fixed -z-10 sm:bottom-4 sm:rounded-b-full overflow-hidden">
-				<WarpBackground
-					color1="#000000"
-					color2="#000272"
-					color3="#19dcff"
-					speed={0.15}
-					swirl={1.5}
-					swirlIterations={10}
-					shapeScale={0.3}
-					client:load
-				/>
-			</div>
-		</nav>
+  <div class="relative w-screen">  <!-- ← w-screen full ancho -->
+    <nav class="fixed left-0 top-0 bottom-0 w-16 sm:w-20 md:w-24 xl:w-32 z-20">  <!-- ← Ancho fijo, sin min-w -->
+      <div class="w-full h-full rounded-r-3xl overflow-hidden shadow-2xl">  <!-- ← rounded solo derecha -->
+        <WarpBackground
+          color1="#000000"
+          color2="#000272"
+          color3="#19dcff"
+          speed={0.15}
+          swirl={1.5}
+          swirlIterations={10}
+          shapeScale={0.3}
+          client:load
+        />
+      </div>
+    </nav>
 
-		<main class="relative"  >
-			<slot />
-			<Footer />
-		</main>
-
-
-	</div>
+    <main class="ml-16 sm:ml-20 md:ml-24 xl:ml-32">  <!-- ← Margin left = ancho nav -->
+      <slot />
+      <Footer />
+    </main>
+  </div>
 </RootLayout>
+
